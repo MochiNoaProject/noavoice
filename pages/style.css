@@ -1,6 +1,16 @@
 body{
     font-family: sans-serif;
     margin: 0px;
-    overflow: hidden;
     background-color: #fefefe;
+}
+
+a{
+    text-decoration: none;
+    color: #ff7500;
+    transition: 0.3s;
+}
+
+a:hover{
+    color: #FAA65F;
+    text-decoration: underline;
 }
