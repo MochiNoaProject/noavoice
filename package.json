@@ -1,0 +1,13 @@
+{
+  "name": "noavoice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hrdtbs/noavoice.git",
+  "author": "hrdtbs <harada.tsubasa.0422@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
