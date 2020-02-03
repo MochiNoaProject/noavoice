@@ -92,6 +92,7 @@ function IndexPage() {
     <>
       <Head>
         <title>noavoice - presented by 望月のあ</title>
+        <link rel="shortcut icon" href="/static/images/icons/favicon.png"/>
         <link rel="manifest" href="/static/manifest.json" />
       </Head>
       <main style={sx.container}>
