@@ -92,6 +92,7 @@ function IndexPage() {
     <>
       <Head>
         <title>noavoice - presented by 望月のあ</title>
+        <meta name="description" content="noavoice。ボタンを押したら声が流れるアプリ。声：望月のあ @_noach"></meta>
         <link rel="shortcut icon" href="/static/images/icons/favicon.png"/>
         <link rel="manifest" href="/static/manifest.json" />
       </Head>
