@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/hrdtbs/noavoice/compare/v1.1.0...v1.2.0) (2020-02-03)
+
+
+### Features
+
+* **pages/:** faviconの追加 ([ac12ebc](https://github.com/hrdtbs/noavoice/commit/ac12ebcebc18cb762fd708b057f58f09547cf09e))
+
+
+### Bug Fixes
+
+* **pages/:**  ヘッダーイメージのサイズを軽量化した ([d1625e3](https://github.com/hrdtbs/noavoice/commit/d1625e33ef5f516ef934462ac283def054d3bf25))
+
 ## 1.1.0 (2020-02-03)
 
 
