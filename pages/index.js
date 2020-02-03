@@ -95,6 +95,15 @@ function IndexPage() {
         <meta name="description" content="noavoice。ボタンを押したら声が流れるアプリ。声：望月のあ @_noach"></meta>
         <link rel="shortcut icon" href="/static/images/icons/favicon.png"/>
         <link rel="manifest" href="/static/manifest.json" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
+  <script>{`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-90236823-7');
+  `}</script>
+
       </Head>
       <main style={sx.container}>
         <img
