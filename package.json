@@ -1,22 +1,101 @@
 {
-  "name": "noavoice",
-  "version": "1.2.0",
-  "main": "index.js",
-  "repository": "git@github.com:hrdtbs/noavoice.git",
-  "author": "hrdtbs <harada.tsubasa.0422@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "next": "^9.2.1",
-    "node": "^13.7.0",
-    "now": "^16.7.3",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
-  },
-  "dependencies": {
-    "@zeit/next-css": "^1.0.1"
-  },
-  "scripts": {
-    "dev": "node server.js",
-    "now-build": "./node_modules/.bin/next build"
-  }
+    "name": "noavoice",
+    "version": "1.2.0",
+    "main": "index.js",
+    "repository": "git@github.com:hrdtbs/noavoice.git",
+    "author": "hrdtbs <harada.tsubasa.0422@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "next": "^9.2.1",
+        "node": "^13.7.0",
+        "now": "^16.7.3",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0"
+    },
+    "dependencies": {
+        "@zeit/next-css": "^1.0.1",
+        "@types/react": "^16.9.19",
+        "@types/react-dom": "^16.9.5",
+        "@typescript-eslint/eslint-plugin": "^2.19.0",
+        "@typescript-eslint/parser": "^2.19.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.18.3",
+        "eslint-plugin-react-hooks": "^2.3.0",
+        "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
+        "husky": "^4.2.1",
+        "lint-staged": "^9.5.0",
+        "prettier": "^1.19.1",
+        "stylelint": "^13.0.0",
+        "stylelint-config-recess-order": "^2.0.3",
+        "stylelint-config-recommended": "^3.0.0",
+        "stylelint-config-styled-components": "^0.1.1",
+        "textlint": "^11.6.2",
+        "textlint-rule-common-misspellings": "^1.0.1",
+        "textlint-rule-preset-ja-technical-writing": "^3.1.3",
+        "textlint-rule-preset-jtf-style": "^2.3.4",
+        "textlint-rule-prh": "^5.3.0",
+        "textlint-rule-spellcheck-tech-word": "^5.0.0",
+        "typescript": "3.7.5"
+    },
+    "scripts": {
+        "dev": "node server.js",
+        "now-build": "./node_modules/.bin/next build",
+        "lint:ts": "eslint ./pages/**/*.ts ./pages/**/*.tsx --cache",
+        "lint:js": "eslint ./pages/**/*.js --cache --ignore-pattern .eslintrc",
+        "lint:json": "prettier '*.json'",
+        "lint:text": "textlint './*.md'",
+        "lint:ci": "circleci config validate",
+        "lint:style": "stylelint './pages/**/*.js' --syntax css-in-js",
+        "lint:fix:ts": "yarn lint:ts --fix",
+        "lint:fix:js": "yarn lint:js --fix",
+        "lint:fix:json": "yarn lint:json --write",
+        "lint:fix:text": "yarn lint:text --fix",
+        "lint:fix:style": "yarn lint:style --fix",
+        "lint": "run-p -l -n -c --aggregate-output lint:*",
+        "lint:fix": "run-p -l -n -c --aggregate-output lint:fix:*"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "./.circleci/config.yml": [
+            "yarn lint:ci",
+            "git add"
+        ],
+        "*.{js,jsx}": [
+            "yarn lint:fix:js",
+            "git add"
+        ],
+        "*.{ts,tsx}": [
+            "yarn typecheck",
+            "yarn lint:style",
+            "yarn lint:fix:ts",
+            "git add"
+        ],
+        "*.{json}": [
+            "yarn lint:fix:json",
+            "git add"
+        ],
+        "*.{md}": [
+            "yarn lint:fix:text",
+            "git add"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2% in JP",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

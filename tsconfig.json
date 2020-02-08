@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        //" allowJs": true, // declarationを使用する場合は有効化できない
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "declarationDir": "./dist",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        // "isolatedModules": true, // decarationを使用する場合は明示してはいけない
+        "jsx": "react", // preserveではrollupがstyled-componentsなどの構文を上手く認識してくれない
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "outDir": "dist",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "es5",
+        "allowJs": true
+    },
+    "include": ["pages"],
+    "exclude": ["node_modules", "dist"]
+}
