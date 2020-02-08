@@ -1,12 +1,12 @@
 body{
-    font-family: sans-serif;
     margin: 0px;
+    font-family: sans-serif;
     background-color: #fefefe;
 }
 
 a{
-    text-decoration: none;
     color: #ff7500;
+    text-decoration: none;
     transition: 0.3s;
 }
 
