@@ -1,6 +1,5 @@
 import "./style.css"
 import { useCallback, useState } from "react"
-import { useRouter } from "next/router"
 import Head from "next/head"
 import SWRegister from "../sw-register"
 
@@ -84,9 +83,7 @@ const Voice = ({ name }) => {
             ></audio>
             <a
                 href={encodeURI(
-                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh?name=${encodeURI(
-                        name
-                    )}&text=望月のあ「${name}」&hashtags=のあぼいす`
+                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh&text=望月のあ「${name}」&hashtags=のあぼいす`
                 )}
                 data-show-count="false"
                 style={{
@@ -104,9 +101,6 @@ const Voice = ({ name }) => {
 }
 
 function IndexPage() {
-    const router = useRouter()
-    const { query } = router
-    const name = decodeURI(query.name)
     return (
         <>
             <Head>
@@ -117,18 +111,11 @@ function IndexPage() {
                 ></meta>
                 <link rel="shortcut icon" href="/static/images/icons/favicon.png" />
                 <link rel="manifest" href="/static/manifest.json" />
-                {query.name && (
-                    <>
-                        <meta name="twitter:card" content="player" />
-                        <meta name="twitter:site" content="@_noach" />
-                        <meta name="twitter:title" content="のあぼいす" />
-                        <meta name="twitter:description" content={name} />
-                        <meta name="twitter:image" content="https://yoursite.com/example.png" />
-                        <meta name="twitter:player" content={`https://noavoice.now.sh/audio?name=${query.name}`} />
-                        <meta name="twitter:player:width" content="480" />
-                        <meta name="twitter:player:height" content="480" />
-                    </>
-                )}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@_noach" />
+                <meta name="twitter:title" content="のあぼいす" />
+                <meta name="twitter:image" content="https://noavoice.now.sh/static/header.png" />
+                <meta name="twitter:description" content="望月のあの声がいつでも聞けるサービス" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
                 <script
                     dangerouslySetInnerHTML={{
