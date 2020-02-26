@@ -82,7 +82,9 @@ const Voice = ({ name }) => {
             ></audio>
             <a
                 href={encodeURI(
-                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh/audio?name=${name}&text=望月のあ「${name}」&hashtags=のあぼいす`
+                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh/audio?name=${encodeURI(
+                        name
+                    )}&text=望月のあ「${name}」&hashtags=のあぼいす`
                 )}
                 data-show-count="false"
                 style={{

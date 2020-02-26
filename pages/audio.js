@@ -4,9 +4,9 @@ import Head from "next/head"
 import SWRegister from "../sw-register"
 
 function IndexPage() {
-    const {
-        query: { name }
-    } = useRouter()
+    const { query } = useRouter()
+    const name = decodeURI(query.name)
+
     return (
         <>
             <Head>
