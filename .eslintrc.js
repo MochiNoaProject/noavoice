@@ -34,14 +34,15 @@ module.exports = {
             tryExtensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".node"]
         }
     },
+    
     overrides: [
         {
             parser: "@typescript-eslint/parser",
             parserOptions: {
-                project: "./tsconfig.eslint.json",
+                project: "./tsconfig.json",
                 createDefaultProgram: true
             },
-            files: ["**/*.ts", "**/*.tsx"],
+            files: ["**/*.js", "**/*.jsx"],
             rules: {
                 "no-undef": "off",
                 // typescript

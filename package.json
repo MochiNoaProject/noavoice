@@ -42,8 +42,8 @@
     "scripts": {
         "dev": "node server.js",
         "now-build": "./node_modules/.bin/next build",
-        "lint:ts": "eslint ./pages/**/*.ts ./pages/**/*.tsx --cache",
-        "lint:js": "eslint ./pages/**/*.js --cache --ignore-pattern .eslintrc",
+        "lint:ts": "eslint --cache",
+        "lint:js": "eslint ./pages/**/*.js --cache --ignore-pattern .eslintrc.js",
         "lint:json": "prettier '*.json'",
         "lint:text": "textlint './*.md'",
         "lint:ci": "circleci config validate",
@@ -72,7 +72,6 @@
             "git add"
         ],
         "*.{ts,tsx}": [
-            "yarn typecheck",
             "yarn lint:style",
             "yarn lint:fix:ts",
             "git add"

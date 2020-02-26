@@ -24,6 +24,7 @@ const sx = {
         margin: "6px",
         flex: "1 1 auto",
         display: "inline-flex",
+        justifyContent: "space-between",
         cursor: "pointer",
         color: "white",
         borderRadius: "10px",
@@ -79,6 +80,21 @@ const Voice = ({ name }) => {
                 onPlay={() => setActive(true)}
                 onEnded={() => setActive(false)}
             ></audio>
+            <a
+                href={encodeURI(
+                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh/audio?name=${name}&text=望月のあ「${name}」&hashtags=のあぼいす`
+                )}
+                data-show-count="false"
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img src="/static/twitter.svg" width="21px" height="21px" />
+            </a>
         </figure>
     )
 }
