@@ -17,17 +17,6 @@ function IndexPage() {
                 ></meta>
                 <link rel="shortcut icon" href="/static/images/icons/favicon.png" />
                 <link rel="manifest" href="/static/manifest.json" />
-                <meta name="twitter:card" content="player" />
-                <meta name="twitter:site" content="@TwitterDev" />
-                <meta name="twitter:title" content="Sample Player Card" />
-                <meta
-                    name="twitter:description"
-                    content="This is a sample video. When you implement, make sure all links are secure."
-                />
-                <meta name="twitter:image" content="https://yoursite.com/example.png" />
-                <meta name="twitter:player" content="https://yoursite.com/container.html" />
-                <meta name="twitter:player:width" content="480" />
-                <meta name="twitter:player:height" content="480" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
                 <script
                     dangerouslySetInnerHTML={{

@@ -1,5 +1,6 @@
 import "./style.css"
 import { useCallback, useState } from "react"
+import { useRouter } from "next/router"
 import Head from "next/head"
 import SWRegister from "../sw-register"
 
@@ -69,6 +70,7 @@ const Voice = ({ name }) => {
             el.play()
         }
     }, [el])
+
     return (
         <figure style={{ ...sx.voice, ...(active ? sx.voiceActive : {}) }} onClick={handleClick}>
             <figcaption>{name}</figcaption>
@@ -82,7 +84,7 @@ const Voice = ({ name }) => {
             ></audio>
             <a
                 href={encodeURI(
-                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh/audio?name=${encodeURI(
+                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh?name=${encodeURI(
                         name
                     )}&text=望月のあ「${name}」&hashtags=のあぼいす`
                 )}
@@ -102,6 +104,8 @@ const Voice = ({ name }) => {
 }
 
 function IndexPage() {
+    const { query } = useRouter()
+    const name = decodeURI(query.name)
     return (
         <>
             <Head>
@@ -112,6 +116,14 @@ function IndexPage() {
                 ></meta>
                 <link rel="shortcut icon" href="/static/images/icons/favicon.png" />
                 <link rel="manifest" href="/static/manifest.json" />
+                <meta name="twitter:card" content="player" />
+                <meta name="twitter:site" content="@_noach" />
+                <meta name="twitter:title" content="のあぼいす" />
+                <meta name="twitter:description" content={name} />
+                <meta name="twitter:image" content="https://yoursite.com/example.png" />
+                <meta name="twitter:player" content={`https://noavoice.now.sh/audio?name=${query.name}`} />
+                <meta name="twitter:player:width" content="480" />
+                <meta name="twitter:player:height" content="480" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
                 <script
                     dangerouslySetInnerHTML={{
