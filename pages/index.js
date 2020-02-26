@@ -150,7 +150,7 @@ function IndexPage() {
                 />
                 <div style={sx.description}>
                     <small>
-                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v1.2.0</a>
+                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v1.3.0</a>
                         <br />
                         <a href="https://twitter.com/_noach" style={sx.descriptionButton}>
                             声：望月のあ @_noach
