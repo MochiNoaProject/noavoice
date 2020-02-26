@@ -104,7 +104,8 @@ const Voice = ({ name }) => {
 }
 
 function IndexPage() {
-    const { query } = useRouter()
+    const router = useRouter()
+    const { query } = router
     const name = decodeURI(query.name)
     return (
         <>
@@ -116,14 +117,18 @@ function IndexPage() {
                 ></meta>
                 <link rel="shortcut icon" href="/static/images/icons/favicon.png" />
                 <link rel="manifest" href="/static/manifest.json" />
-                <meta name="twitter:card" content="player" />
-                <meta name="twitter:site" content="@_noach" />
-                <meta name="twitter:title" content="のあぼいす" />
-                <meta name="twitter:description" content={name} />
-                <meta name="twitter:image" content="https://yoursite.com/example.png" />
-                <meta name="twitter:player" content={`https://noavoice.now.sh/audio?name=${query.name}`} />
-                <meta name="twitter:player:width" content="480" />
-                <meta name="twitter:player:height" content="480" />
+                {query.name && (
+                    <>
+                        <meta name="twitter:card" content="player" />
+                        <meta name="twitter:site" content="@_noach" />
+                        <meta name="twitter:title" content="のあぼいす" />
+                        <meta name="twitter:description" content={name} />
+                        <meta name="twitter:image" content="https://yoursite.com/example.png" />
+                        <meta name="twitter:player" content={`https://noavoice.now.sh/audio?name=${query.name}`} />
+                        <meta name="twitter:player:width" content="480" />
+                        <meta name="twitter:player:height" content="480" />
+                    </>
+                )}
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
                 <script
                     dangerouslySetInnerHTML={{
