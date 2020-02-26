@@ -114,7 +114,7 @@ function IndexPage() {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@_noach" />
                 <meta name="twitter:title" content="のあぼいす" />
-                <meta name="twitter:image" content="https://noavoice.now.sh/static/header.png" />
+                <meta name="twitter:image" content="https://noavoice.now.sh/static/twitter-ogp.png" />
                 <meta name="twitter:description" content="望月のあの声がいつでも聞けるサービス" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
                 <script
