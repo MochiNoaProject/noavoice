@@ -143,7 +143,7 @@ function IndexPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <img src="/static/twitter-blue.svg" width="32px" height="32px" />
+                        <img src="/static/twitter-blue.svg" width="32px" height="32px" alt="twitter" />
                         Twitterでシェアして応援！
                     </a>
                 </nav>
