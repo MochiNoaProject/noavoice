@@ -77,6 +77,10 @@ function IndexPage() {
                 <meta name="twitter:title" content="のあぼいす" />
                 <meta name="twitter:image" content="https://noavoice.now.sh/static/twitter-ogp.png" />
                 <meta name="twitter:description" content="望月のあの声がいつでも聞けるサービス" />
+                <link
+                    href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese"
+                    rel="stylesheet"
+                ></link>
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
                 <script
                     dangerouslySetInnerHTML={{
