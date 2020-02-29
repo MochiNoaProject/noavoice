@@ -1,5 +1,5 @@
+import "./keyframes.css"
 import "./style.css"
-import "./voice.css"
 import { useCallback, useState } from "react"
 import { voices } from "../constants/voices"
 import Head from "next/head"
@@ -49,16 +49,34 @@ const Voice = ({ name }) => {
     }, [el])
 
     return (
-        <figure className="voice-ui" onClick={handleClick}>
+        <figure
+            style={{
+                position: "relative",
+                display: "inline-flex",
+                flex: "1 1 auto",
+                justifyContent: "space-between",
+                padding: "12px 20px 12px 32px",
+                margin: "6px",
+                overflow: "hidden",
+                color: "white",
+                cursor: "pointer",
+                backgroundColor: "#faa65f",
+                borderLeft: "12px solid #fcdfa1",
+                borderRadius: "10px",
+                boxShadow: "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)"
+            }}
+            onClick={handleClick}
+        >
             <div
-                className="progressbar"
-                style={
-                    active
-                        ? {
-                              animation: `decrement ${duration}s ease-in-out`
-                          }
-                        : undefined
-                }
+                style={{
+                    position: "absolute",
+                    top: "0px",
+                    left: "0px",
+                    height: "100%",
+                    backgroundColor: "black",
+                    mixBlendMode: "soft-light",
+                    animation: active ? `decrement ${duration}s ease-in-out` : undefined
+                }}
             ></div>
             <figcaption>{name}</figcaption>
             <audio
