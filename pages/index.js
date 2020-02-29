@@ -50,6 +50,7 @@ const Voice = ({ name }) => {
         <figure style={{ ...sx.voice, ...(active ? sx.voiceActive : {}) }} onClick={handleClick}>
             <figcaption>{name}</figcaption>
             <audio
+                preload="none"
                 ref={node => {
                     setEl(node)
                 }}
