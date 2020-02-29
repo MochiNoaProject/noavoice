@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/hrdtbs/noavoice/compare/v1.4.0...v1.5.0) (2020-02-29)
+
+
+### Features
+
+* add duration animation to audio ([010cc9c](https://github.com/hrdtbs/noavoice/commit/010cc9cb98e0b98c85f3a698bcb26b637ef70b1c))
+* preconnect Google fonts ([998032b](https://github.com/hrdtbs/noavoice/commit/998032b58dfa3bafb923d6e16bb440ffaa1f7d24))
+* use webp to image ([93ccd17](https://github.com/hrdtbs/noavoice/commit/93ccd1789caa657caccd33e9950856e565cd8a89))
+
+
+### Bug Fixes
+
+* add alt to twitter image ([408169b](https://github.com/hrdtbs/noavoice/commit/408169b1e76198cb06e791bcfe5b2afbe271aba1))
+* compress header image ([b4b7478](https://github.com/hrdtbs/noavoice/commit/b4b7478291eaaabb1679e0ce754c70a6dabf685f))
+* disable Google font ([c900cfb](https://github.com/hrdtbs/noavoice/commit/c900cfbccf170123b1a665220ae726ff77e1ef05))
+* preconnect Google analytics ([4410c65](https://github.com/hrdtbs/noavoice/commit/4410c65829f2dfd633eced67fd1c09f2d29ae103))
+* remove invalid audio ([958f052](https://github.com/hrdtbs/noavoice/commit/958f0527e1cefb0f350c6a075fc4d75bd031f5e1))
+* remove unused CSS ([582dcd3](https://github.com/hrdtbs/noavoice/commit/582dcd32dc74dc9fe017263dd0823b078801ec42))
+
 ## [1.4.0](https://github.com/hrdtbs/noavoice/compare/v1.3.0...v1.4.0) (2020-02-29)
 
 
