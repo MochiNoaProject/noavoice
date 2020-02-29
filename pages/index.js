@@ -115,7 +115,7 @@ function IndexPage() {
                     height="150px"
                     width="100%"
                     style={sx.header}
-                    decoding="async"
+                    loading="lazy"
                 />
                 <nav style={{ display: "flex", justifyContent: "space-between", margin: "6px 32px", flexWrap: "wrap" }}>
                     <div>
