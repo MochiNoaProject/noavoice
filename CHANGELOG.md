@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/hrdtbs/noavoice/compare/v1.3.0...v1.4.0) (2020-02-29)
+
+
+### Features
+
+* add new audio files ([8410c6b](https://github.com/hrdtbs/noavoice/commit/8410c6b2fd03981d814ee9dddfcff181b1535ce3))
+* add share button ([1613255](https://github.com/hrdtbs/noavoice/commit/1613255e1366b15ec680bab7f897fd88a41b5dc4))
+* change font to Kosugi Maru ([3dac6ec](https://github.com/hrdtbs/noavoice/commit/3dac6ecf0514ec408ee1c6cbedb37d61fb749adc))
+* follow audio src to change audio file extension ([81fc36d](https://github.com/hrdtbs/noavoice/commit/81fc36de0e8453d42b8cf2351fc670de4a968285))
+* make voicelist ([15231e8](https://github.com/hrdtbs/noavoice/commit/15231e8c1cecd2a497ec0ef38a4c56ba247f2aca))
+
+
+### Bug Fixes
+
+* make audio preload to none ([7e57434](https://github.com/hrdtbs/noavoice/commit/7e57434b84275d0883ed9fbd277f643e58fe5305))
+
 ## [1.3.0](https://github.com/hrdtbs/noavoice/compare/v1.1.0...v1.3.0) (2020-02-26)
 
 
