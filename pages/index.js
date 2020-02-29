@@ -53,7 +53,6 @@ const Voice = ({ name }) => {
                 ref={node => {
                     setEl(node)
                 }}
-                preload="none"
                 src={`/static/voices/${name}.mp4`}
                 onPlay={() => setActive(true)}
                 onEnded={() => setActive(false)}
