@@ -68,7 +68,7 @@ function IndexPage() {
                 <title>noavoice - presented by 望月のあ</title>
                 <meta
                     name="description"
-                    content="noavoice。ボタンを押したら声が流れるアプリ。声：望月のあ @_noach"
+                    content="望月のあの声がいつでも聞けるサービス。疲れが取れない、辛いことがあった、そんなあなたに癒しを。"
                 ></meta>
                 <link rel="shortcut icon" href="/static/images/icons/favicon.png" />
                 <link rel="manifest" href="/static/manifest.json" />
@@ -84,6 +84,7 @@ function IndexPage() {
                     rel="stylesheet"
                 ></link>
                 */}
+                <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90236823-7"></script>
                 <script
                     dangerouslySetInnerHTML={{
