@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/hrdtbs/noavoice/compare/v1.5.0...v2.0.0) (2020-02-29)
+
+
+### Features
+
+* use workbox ([67e3a2c](https://github.com/hrdtbs/noavoice/commit/67e3a2c8b4753586ed22bbb4c24716a1aeb1c57a))
+
+
+### Bug Fixes
+
+* follow nextjs changes ([2a68e6e](https://github.com/hrdtbs/noavoice/commit/2a68e6e66fbf7aa9f36e0a8e7f5e85bc2f5cdeae))
+
 ## [1.5.0](https://github.com/hrdtbs/noavoice/compare/v1.4.0...v1.5.0) (2020-02-29)
 
 

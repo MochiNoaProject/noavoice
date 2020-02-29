@@ -1,6 +1,6 @@
 {
     "name": "noavoice",
-    "version": "1.5.0",
+    "version": "2.0.0",
     "main": "index.js",
     "repository": "git@github.com:hrdtbs/noavoice.git",
     "author": "hrdtbs <harada.tsubasa.0422@gmail.com>",
