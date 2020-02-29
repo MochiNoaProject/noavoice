@@ -1,5 +1,6 @@
 import "./style.css"
 import { useCallback, useState } from "react"
+import { voices } from "../constants/voices"
 import Head from "next/head"
 import SWRegister from "../sw-register"
 
@@ -16,9 +17,6 @@ const sx = {
         display: "flex",
         flexWrap: "wrap",
         margin: "6px 12px"
-    },
-    description: {
-        margin: "6px 32px"
     },
     voice: {
         margin: "6px",
@@ -38,28 +36,6 @@ const sx = {
         backgroundColor: "hsla(27, 94%, 50%, 1)"
     }
 }
-
-const voices = [
-    "FPSは遊びじゃないんだよ！",
-    "しばしまたれいっ！",
-    "そのDVDうちにあるよ？",
-    "だめだめだめだめ",
-    "ねぇ、たすからないで！？",
-    "ネットに写真をアップロードするのは十分気をつけたほうがいい",
-    "ネットは怖いんですよ〜？",
-    "のあに賄賂はきかないよ！？",
-    "やっちゃった〜",
-    "やっていこう！",
-    "ゆるさないんだからね！",
-    "下心あれば水心",
-    "何？通分って？？",
-    "死は救済です。",
-    "消費税込みはだめだよなぁ？",
-    "他の女の匂いがする",
-    "脳みそと直結してんのかぁ？",
-    "分かんないとき指当てない？普通",
-    "来ちゃった♡"
-]
 
 const Voice = ({ name }) => {
     const [el, setEl] = useState(null)
@@ -81,21 +57,6 @@ const Voice = ({ name }) => {
                 onPlay={() => setActive(true)}
                 onEnded={() => setActive(false)}
             ></audio>
-            <a
-                href={encodeURI(
-                    `https://twitter.com/intent/tweet?url=https://noavoice.now.sh&text=望月のあ「${name}」&hashtags=のあぼいす`
-                )}
-                data-show-count="false"
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                }}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <img src="/static/twitter.svg" width="21px" height="21px" />
-            </a>
         </figure>
     )
 }
@@ -148,23 +109,44 @@ function IndexPage() {
                     style={sx.header}
                     decoding="async"
                 />
-                <div style={sx.description}>
-                    <small>
-                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v1.3.0</a>
-                        <br />
-                        <a href="https://twitter.com/_noach" style={sx.descriptionButton}>
-                            声：望月のあ @_noach
-                        </a>
-                        <br />
-                        <a
-                            rel="noreferrer noopener"
-                            target="_blank"
-                            href="https://github.com/hrdtbs/noavoice#%E9%9F%B3%E5%A3%B0%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AElicence%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
-                        >
-                            音声ファイルのライセンスについて
-                        </a>
-                    </small>
-                </div>
+                <nav style={{ display: "flex", justifyContent: "space-between", margin: "6px 32px", flexWrap: "wrap" }}>
+                    <div>
+                        <small>
+                            <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v1.3.0</a>
+                            <br />
+                            <a href="https://twitter.com/_noach" style={sx.descriptionButton}>
+                                声：望月のあ @_noach
+                            </a>
+                            <br />
+                            <a
+                                rel="noreferrer noopener"
+                                target="_blank"
+                                href="https://github.com/hrdtbs/noavoice#%E9%9F%B3%E5%A3%B0%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AElicence%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
+                            >
+                                音声ファイルのライセンスについて
+                            </a>
+                        </small>
+                    </div>
+                    <a
+                        href={encodeURI(
+                            `https://twitter.com/intent/tweet?url=https://noavoice.now.sh&text=Vtuber望月のあボイスボタン&hashtags=のあぼいす`
+                        )}
+                        data-show-count="false"
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: "1em 0.5em",
+                            margin: "0.5em 0px",
+                            border: "4px dotted #FAA65F"
+                        }}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img src="/static/twitter-blue.svg" width="32px" height="32px" />
+                        Twitterでシェアして応援！
+                    </a>
+                </nav>
                 <div style={sx.voiceGroup}>
                     {voices.map((voice, i) => {
                         return <Voice name={voice} key={`voice-${i}`} />
