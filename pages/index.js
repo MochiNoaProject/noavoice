@@ -110,14 +110,18 @@ function IndexPage() {
                         padding-bottom: 24px;
                     }
                 `}</style>
-                <img
-                    src="/static/header-min.png"
-                    alt="header"
-                    height="150px"
-                    width="100%"
-                    style={sx.header}
-                    loading="lazy"
-                />
+                <picture>
+                    <source srcSet="/static/header-min.webp" type="image/webp" />
+                    <img
+                        src="/static/header-min.png"
+                        alt="header"
+                        height="150px"
+                        width="100%"
+                        style={sx.header}
+                        loading="lazy"
+                    />
+                </picture>
+
                 <nav style={{ display: "flex", justifyContent: "space-between", margin: "6px 32px", flexWrap: "wrap" }}>
                     <div>
                         <small>
