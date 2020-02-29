@@ -42,7 +42,7 @@ module.exports = {
                 project: "./tsconfig.json",
                 createDefaultProgram: true
             },
-            files: ["**/*.js", "**/*.jsx"],
+            files: ["**/*.ts", "**/*.tsx"],
             rules: {
                 "no-undef": "off",
                 // typescript
@@ -104,7 +104,7 @@ module.exports = {
                 "no-invalid-this": 0
             }
         },{
-            files: ["*.js", "*.config.js", "config.js"],
+            files: ["*.js", "*.config.js", "config.js", "./scripts/*.js"],
             env: {
                 node: true
             }

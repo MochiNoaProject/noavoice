@@ -30,7 +30,8 @@
     "isolatedModules": true
   },
   "include": [
-    "pages"
+    "pages",
+    "constants"
   ],
   "exclude": [
     "node_modules",
