@@ -77,7 +77,7 @@ const Voice = ({ name }) => {
                 ref={node => {
                     setEl(node)
                 }}
-                src={`/static/voices/${name}.mp4`}
+                src={`/static/voices/${name}.mp3`}
                 onPlay={() => setActive(true)}
                 onEnded={() => setActive(false)}
             ></audio>
