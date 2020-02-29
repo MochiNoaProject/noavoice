@@ -1,4 +1,5 @@
 import "./style.css"
+import "./voice.css"
 import { useCallback, useState } from "react"
 import { voices } from "../constants/voices"
 import Head from "next/head"
@@ -19,6 +20,7 @@ const sx = {
         margin: "6px 12px"
     },
     voice: {
+        position: "relative",
         margin: "6px",
         flex: "1 1 auto",
         display: "inline-flex",
@@ -30,27 +32,37 @@ const sx = {
         backgroundColor: "#faa65f",
         borderLeft: "12px solid #FCDFA1",
         transition: "0.3s",
+        overflow: "hidden",
         boxShadow: "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)"
-    },
-    voiceActive: {
-        backgroundColor: "hsla(27, 94%, 50%, 1)"
     }
 }
 
 const Voice = ({ name }) => {
     const [el, setEl] = useState(null)
+    const [duration, setDuration] = useState(0)
     const [active, setActive] = useState(false)
     const handleClick = useCallback(() => {
         if (el) {
+            setDuration(el.duration)
             el.play()
         }
     }, [el])
 
     return (
-        <figure style={{ ...sx.voice, ...(active ? sx.voiceActive : {}) }} onClick={handleClick}>
+        <figure className="voice-ui" onClick={handleClick}>
+            <div
+                className="progressbar"
+                style={
+                    active
+                        ? {
+                              animation: `decrement ${duration}s ease-in-out`
+                          }
+                        : undefined
+                }
+            ></div>
             <figcaption>{name}</figcaption>
             <audio
-                preload="none"
+                preload="metadata"
                 ref={node => {
                     setEl(node)
                 }}
