@@ -106,7 +106,7 @@ function IndexPage() {
                     }
                 `}</style>
                 <img
-                    src="/static/header.png"
+                    src="/static/header-min.png"
                     alt="header"
                     height="150px"
                     width="100%"
