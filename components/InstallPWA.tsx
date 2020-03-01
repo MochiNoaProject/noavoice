@@ -4,8 +4,8 @@ import React from "react"
 export default function AppInstallButton() {
     const [installable, showInstallPrompt] = useInstallPWA()
 
-    return (
-        <button onClick={showInstallPrompt} disabled={!installable}>
+    return installable ? (
+        <button onClick={showInstallPrompt}>
             <style jsx>{`
                 button {
                     all: unset;
@@ -21,14 +21,8 @@ export default function AppInstallButton() {
                     cursor: pointer;
                     text-decoration: underline;
                 }
-                button:disabled {
-                    cursor: wait;
-                    color: gray;
-                    border-color: gray;
-                    text-decoration: none;
-                }
             `}</style>
-            {installable ? "アプリをインストールする" : "しばしまたれい"}
+            アプリをインストールする
         </button>
-    )
+    ) : null
 }
