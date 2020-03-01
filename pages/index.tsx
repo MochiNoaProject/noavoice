@@ -99,22 +99,26 @@ function IndexPage() {
                     flex-wrap: wrap;
                     margin: 6px 12px;
                 }
+                main > footer {
+                    margin: 6px 32px;
+                    display: flex;
+                    justify-content: flex-end;
+                }
                 a {
                     color: #ff7500;
-                    text-decoration: none;
+                    text-decoration: underline;
                     transition: 0.3s;
                 }
 
                 a:hover {
                     color: #faa65f;
-                    text-decoration: underline;
                 }
                 a button {
                     all: unset;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 1em 0.5em;
+                    padding: 0.75em 1em;
                     margin: 0.5em 0px;
                     border: 4px dotted #faa65f;
                 }
@@ -125,7 +129,6 @@ function IndexPage() {
                     <img src="/static/header-min.png" alt="header" height="150px" width="100%" loading="lazy" />
                 </picture>
             </header>
-            <InstallPWA />
 
             <nav>
                 <div>
@@ -153,7 +156,7 @@ function IndexPage() {
                     rel="noopener noreferrer"
                 >
                     <button>
-                        <img src="/static/twitter-blue.svg" width="32px" height="32px" alt="twitter" />
+                        <img src="/static/twitter-blue.svg" width="28px" height="28px" alt="twitter" />
                         Twitterでシェアして応援！
                     </button>
                 </a>
@@ -163,6 +166,9 @@ function IndexPage() {
                     return <Voice name={voice} key={`voice-${i}`} />
                 })}
             </article>
+            <footer>
+                <InstallPWA />
+            </footer>
         </main>
     )
 }
