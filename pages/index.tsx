@@ -2,23 +2,14 @@ import { useCallback, useState } from "react"
 import { voices } from "../constants/voices"
 import clsx from "clsx"
 
-const sx = {
-    title: {
-        textAlign: "right",
-        fontSize: "25px",
-        fontFamily: "serif"
-    },
-    voiceGroup: {}
-}
-
-const Voice = ({ name }) => {
-    const [el, setEl] = useState(null)
+const Voice: React.FC<{ name: string }> = ({ name }) => {
+    const [el, setEl] = useState<HTMLAudioElement | null>(null)
     const [duration, setDuration] = useState(0)
     const [active, setActive] = useState(false)
-    const handleClick = useCallback(() => {
+    const handleClick = useCallback(async () => {
         if (el) {
             setDuration(el.duration)
-            el.play()
+            await el.play()
         }
     }, [el])
 
@@ -139,9 +130,7 @@ function IndexPage() {
                     <small>
                         <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v2.0.0</a>
                         <br />
-                        <a href="https://twitter.com/_noach" style={sx.descriptionButton}>
-                            声：望月のあ @_noach
-                        </a>
+                        <a href="https://twitter.com/_noach">声：望月のあ @_noach</a>
                         <br />
                         <a
                             rel="noreferrer noopener"

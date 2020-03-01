@@ -29,10 +29,7 @@
     "allowJs": true,
     "isolatedModules": true
   },
-  "include": [
-    "pages",
-    "constants"
-  ],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules",
     "dist"

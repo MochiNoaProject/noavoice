@@ -46,18 +46,19 @@
         "now-build": "./node_modules/.bin/next build",
         "start": "next start",
         "lint:ts": "eslint --cache",
-        "lint:js": "eslint ./pages/**/*.js --cache --ignore-pattern .eslintrc.js",
+        "lint:js": "eslint ./*.js --cache --ignore-pattern .eslintrc.js",
         "lint:json": "prettier '*.json'",
         "lint:text": "textlint './*.md'",
         "lint:ci": "circleci config validate",
-        "lint:style": "stylelint './pages/**/*.js' --syntax css-in-js",
+        "lint:style": "stylelint './**/*.tsx' --syntax css-in-js",
         "lint:fix:ts": "yarn lint:ts --fix",
         "lint:fix:js": "yarn lint:js --fix",
         "lint:fix:json": "yarn lint:json --write",
         "lint:fix:text": "yarn lint:text --fix",
         "lint:fix:style": "yarn lint:style --fix",
         "lint": "run-p -l -n -c --aggregate-output lint:*",
-        "lint:fix": "run-p -l -n -c --aggregate-output lint:fix:*"
+        "lint:fix": "run-p -l -n -c --aggregate-output lint:fix:*",
+        "type-check": "tsc"
     },
     "husky": {
         "hooks": {
