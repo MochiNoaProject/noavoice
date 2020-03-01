@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/hrdtbs/noavoice/compare/v2.0.0...v2.0.1) (2020-03-01)
+
+
+### Bug Fixes
+
+* add support of PWA Optimized ([7e28dca](https://github.com/hrdtbs/noavoice/commit/7e28dca416679e1084d8a5134011a3061a3e472d))
+* make global style to native ([4d1f518](https://github.com/hrdtbs/noavoice/commit/4d1f518fe198cf30eb3a5104bd358d21a5183b24))
+
 ## [2.0.0](https://github.com/hrdtbs/noavoice/compare/v1.5.0...v2.0.0) (2020-02-29)
 
 
