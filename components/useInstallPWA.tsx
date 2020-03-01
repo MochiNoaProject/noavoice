@@ -11,6 +11,7 @@ interface BeforeInstallPromptEvent extends Event {
 
 let cache: BeforeInstallPromptEvent
 if (typeof window !== "undefined") {
+    console.warn("005")
     window.addEventListener("beforeinstallprompt", e => {
         console.warn("004")
         e.preventDefault()
