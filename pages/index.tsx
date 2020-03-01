@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react"
 import { voices } from "../constants/voices"
+import InstallPWA from "../components/InstallPWA"
 import clsx from "clsx"
 
 const Voice: React.FC<{ name: string }> = ({ name }) => {
@@ -124,11 +125,14 @@ function IndexPage() {
                     <img src="/static/header-min.png" alt="header" height="150px" width="100%" loading="lazy" />
                 </picture>
             </header>
+            <InstallPWA />
 
             <nav>
                 <div>
                     <small>
-                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v2.0.1</a>
+                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md#changelog">
+                            noavoice: v2.0.1
+                        </a>
                         <br />
                         <a href="https://twitter.com/_noach">声：望月のあ @_noach</a>
                         <br />
