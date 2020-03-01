@@ -17,6 +17,8 @@ class MyDocument extends Document {
                     ></meta>
                     <link rel="shortcut icon" href="/static/images/icons/favicon.png" />
                     <link rel="manifest" href="/manifest.json" />
+                    <link rel="apple-touch-icon" href="/static/images/icons/favicon.png"></link>
+                    <meta name="theme-color" content="#faa65f" />
                     <meta name="twitter:card" content="summary_large_image" />
                     <meta name="twitter:site" content="@_noach" />
                     <meta name="twitter:title" content="のあぼいす" />
