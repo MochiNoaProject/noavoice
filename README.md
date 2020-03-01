@@ -6,6 +6,15 @@
 ![SEO:100](https://img.shields.io/badge/SEO-100-09CE6A.svg?longCache=true)
 ![PWA:Supported](https://img.shields.io/badge/PWA-Supported-4696FB.svg?longCache=true)
 
+## 不具合報告
+
+- アプリケーションに不具合があった場合
+- LICENCEについて質問がある場合
+
+は下記リンクからIssueを立ててください。
+
+https://github.com/hrdtbs/noavoice/issues/new
+
 
 ## 音声ファイルのLICENCEについて
 
@@ -17,7 +26,7 @@
 
 3. **継承** — この作品の貢献した部分については同様のライセンスの下に頒布しなければなりません。
 
-## クレジット
+### クレジット
 
 使用している音声が、**望月のあ**の音声であることが明確に分かるような形で、
 **望月のあ**の名前とTwitterのID及びリンクを設置すること。
@@ -28,4 +37,6 @@
 
 ## 音声ファイル
 
-[here](https://github.com/hrdtbs/noavoice/tree/master/public/static/voices)
+上記、音声ファイルのLICENCEについてをちゃんとご覧になり遵守した上で[ここ](https://github.com/hrdtbs/noavoice/tree/master/public/static/voices
+)からダウンロードを行い使用してください。
+
