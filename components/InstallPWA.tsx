@@ -1,42 +1,33 @@
-//@ts-nocheck
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 
-const InstallPWA = () => {
-    const [supportsPWA, setSupportsPWA] = useState(false)
-    const [promptInstall, setPromptInstall] = useState(null)
+let _installPrompt: any
+window.addEventListener("beforeinstallprompt", e => {
+    e.preventDefault()
+    _installPrompt = e
+})
 
+export default function AppInstallButton() {
+    const [prompt, setInstallPrompt] = useState<any>(_installPrompt)
     useEffect(() => {
-        const handler = e => {
-            e.preventDefault()
-            setSupportsPWA(true)
-            setPromptInstall(e)
-        }
-        window.addEventListener("beforeinstallprompt", handler)
-
-        return () => window.removeEventListener("transitionend", handler)
+        if (_installPrompt) return
+        const id = setInterval(() => {
+            if (_installPrompt) {
+                setInstallPrompt(_installPrompt)
+                if (id) clearInterval(id)
+            }
+        }, 3000)
+        return () => clearInterval(id)
     }, [])
 
-    const onClick = evt => {
-        evt.preventDefault()
-        if (!promptInstall) {
-            return
+    const onClickInstall = useCallback(() => {
+        if (prompt) {
+            prompt.prompt()
         }
-        promptInstall.prompt()
-    }
-    if (!supportsPWA) {
-        return null
-    }
+    }, [prompt])
+
     return (
-        <button
-            className="link-button"
-            id="setup_button"
-            aria-label="Install app"
-            title="Install app"
-            onClick={onClick}
-        >
+        <button disabled={!prompt} onClick={onClickInstall}>
             Install
         </button>
     )
 }
-
-export default InstallPWA
