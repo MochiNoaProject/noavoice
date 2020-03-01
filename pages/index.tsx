@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react"
 import { voices } from "../constants/voices"
+import InstallPWA from "../components/InstallPWA"
 import clsx from "clsx"
 
 const Voice: React.FC<{ name: string }> = ({ name }) => {
@@ -98,6 +99,11 @@ function IndexPage() {
                     flex-wrap: wrap;
                     margin: 6px 12px;
                 }
+                main > footer {
+                    margin: 6px 32px;
+                    display: flex;
+                    justify-content: flex-end;
+                }
                 a {
                     color: #ff7500;
                     text-decoration: none;
@@ -113,7 +119,7 @@ function IndexPage() {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    padding: 1em 0.5em;
+                    padding: 0.75em 1em;
                     margin: 0.5em 0px;
                     border: 4px dotted #faa65f;
                 }
@@ -128,7 +134,9 @@ function IndexPage() {
             <nav>
                 <div>
                     <small>
-                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v2.0.1</a>
+                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md#changelog">
+                            noavoice: v2.0.1
+                        </a>
                         <br />
                         <a href="https://twitter.com/_noach">声：望月のあ @_noach</a>
                         <br />
@@ -149,7 +157,7 @@ function IndexPage() {
                     rel="noopener noreferrer"
                 >
                     <button>
-                        <img src="/static/twitter-blue.svg" width="32px" height="32px" alt="twitter" />
+                        <img src="/static/twitter-blue.svg" width="28px" height="28px" alt="twitter" />
                         Twitterでシェアして応援！
                     </button>
                 </a>
@@ -159,6 +167,9 @@ function IndexPage() {
                     return <Voice name={voice} key={`voice-${i}`} />
                 })}
             </article>
+            <footer>
+                <InstallPWA />
+            </footer>
         </main>
     )
 }
