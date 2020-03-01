@@ -43,16 +43,16 @@ class MyDocument extends Document {
                     }}
                 ></script>
                 */}
+                    <style>{`
+                    body {
+                        margin: 0px;
+                        font-family: sans-serif;
+                        line-height: 1.7;
+                        background-color: #fefefe;
+                    }
+                    `}</style>
                 </Head>
                 <body>
-                    <style jsx global>{`
-                        body {
-                            margin: 0px;
-                            font-family: sans-serif;
-                            line-height: 1.7;
-                            background-color: #fefefe;
-                        }
-                    `}</style>
                     <Main />
                     <NextScript />
                 </body>
