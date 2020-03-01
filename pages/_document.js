@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
     render() {
         return (
-            <Html>
+            <Html lang="ja">
                 <Head>
                     <title>noavoice - presented by 望月のあ</title>
                     <meta
@@ -45,6 +45,14 @@ class MyDocument extends Document {
                 */}
                 </Head>
                 <body>
+                    <style jsx global>{`
+                        body {
+                            margin: 0px;
+                            font-family: sans-serif;
+                            line-height: 1.7;
+                            background-color: #fefefe;
+                        }
+                    `}</style>
                     <Main />
                     <NextScript />
                 </body>

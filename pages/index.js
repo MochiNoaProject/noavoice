@@ -1,7 +1,6 @@
-import "./keyframes.css"
-import "./style.css"
 import { useCallback, useState } from "react"
 import { voices } from "../constants/voices"
+import clsx from "clsx"
 
 const sx = {
     title: {
@@ -9,30 +8,7 @@ const sx = {
         fontSize: "25px",
         fontFamily: "serif"
     },
-    header: {
-        objectFit: "cover"
-    },
-    voiceGroup: {
-        display: "flex",
-        flexWrap: "wrap",
-        margin: "6px 12px"
-    },
-    voice: {
-        position: "relative",
-        margin: "6px",
-        flex: "1 1 auto",
-        display: "inline-flex",
-        justifyContent: "space-between",
-        cursor: "pointer",
-        color: "white",
-        borderRadius: "10px",
-        padding: "12px 20px 12px 32px",
-        backgroundColor: "#faa65f",
-        borderLeft: "12px solid #FCDFA1",
-        transition: "0.3s",
-        overflow: "hidden",
-        boxShadow: "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)"
-    }
+    voiceGroup: {}
 }
 
 const Voice = ({ name }) => {
@@ -47,35 +23,50 @@ const Voice = ({ name }) => {
     }, [el])
 
     return (
-        <figure
-            style={{
-                position: "relative",
-                display: "inline-flex",
-                flex: "1 1 auto",
-                justifyContent: "space-between",
-                padding: "12px 20px 12px 32px",
-                margin: "6px",
-                overflow: "hidden",
-                color: "white",
-                cursor: "pointer",
-                backgroundColor: "#faa65f",
-                borderLeft: "12px solid #fcdfa1",
-                borderRadius: "10px",
-                boxShadow: "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)"
-            }}
-            onClick={handleClick}
-        >
-            <div
-                style={{
-                    position: "absolute",
-                    top: "0px",
-                    left: "0px",
-                    height: "100%",
-                    backgroundColor: "black",
-                    mixBlendMode: "soft-light",
-                    animation: active ? `decrement ${duration}s ease-in-out` : undefined
-                }}
-            ></div>
+        <figure onClick={handleClick} className={clsx(active && "active")}>
+            <style jsx>{`
+                figure {
+                    position: relative;
+                    display: inline-flex;
+                    flex: 1 1 auto;
+                    justify-content: space-between;
+                    padding: 12px 20px 12px 32px;
+                    margin: 6px;
+                    overflow: hidden;
+                    color: white;
+                    cursor: pointer;
+                    background-color: #faa65f;
+                    border-left: 12px solid #fcdfa1;
+                    border-radius: 10px;
+                    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                        0 1px 5px 0 rgba(0, 0, 0, 0.12);
+                }
+                figure::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    height: 100%;
+                    background-color: black;
+                    mix-blend-mode: soft-light;
+                    will-change: width;
+                    transform: translate3d(0, 0, 0);
+                }
+            `}</style>
+            <style jsx>{`
+                figure.active::before {
+                    animation: decrement ${duration}s ease-in-out;
+                }
+                @keyframes decrement {
+                    0% {
+                        width: 100%;
+                    }
+                    100% {
+                        width: 0%;
+                    }
+                }
+            `}</style>
             <figcaption>{name}</figcaption>
             <audio
                 preload="metadata"
@@ -102,20 +93,48 @@ function IndexPage() {
                     background-color: #fff;
                     padding-bottom: 24px;
                 }
-            `}</style>
-            <picture>
-                <source srcSet="/static/header-min.webp" type="image/webp" />
-                <img
-                    src="/static/header-min.png"
-                    alt="header"
-                    height="150px"
-                    width="100%"
-                    style={sx.header}
-                    loading="lazy"
-                />
-            </picture>
+                main > header img {
+                    object-fit: cover;
+                }
+                main > nav {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 6px 32px;
+                    flex-wrap: wrap;
+                }
+                main > article {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 6px 12px;
+                }
+                a {
+                    color: #ff7500;
+                    text-decoration: none;
+                    transition: 0.3s;
+                }
 
-            <nav style={{ display: "flex", justifyContent: "space-between", margin: "6px 32px", flexWrap: "wrap" }}>
+                a:hover {
+                    color: #faa65f;
+                    text-decoration: underline;
+                }
+                a button {
+                    all: unset;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1em 0.5em;
+                    margin: 0.5em 0px;
+                    border: 4px dotted #faa65f;
+                }
+            `}</style>
+            <header>
+                <picture>
+                    <source srcSet="/static/header-min.webp" type="image/webp" />
+                    <img src="/static/header-min.png" alt="header" height="150px" width="100%" loading="lazy" />
+                </picture>
+            </header>
+
+            <nav>
                 <div>
                     <small>
                         <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v2.0.0</a>
@@ -137,27 +156,20 @@ function IndexPage() {
                     href={encodeURI(
                         `https://twitter.com/intent/tweet?url=https://noavoice.now.sh&text=Vtuber望月のあボイスボタン&hashtags=のあぼいす`
                     )}
-                    data-show-count="false"
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        padding: "1em 0.5em",
-                        margin: "0.5em 0px",
-                        border: "4px dotted #FAA65F"
-                    }}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <img src="/static/twitter-blue.svg" width="32px" height="32px" alt="twitter" />
-                    Twitterでシェアして応援！
+                    <button>
+                        <img src="/static/twitter-blue.svg" width="32px" height="32px" alt="twitter" />
+                        Twitterでシェアして応援！
+                    </button>
                 </a>
             </nav>
-            <div style={sx.voiceGroup}>
+            <article>
                 {voices.map((voice, i) => {
                     return <Voice name={voice} key={`voice-${i}`} />
                 })}
-            </div>
+            </article>
         </main>
     )
 }

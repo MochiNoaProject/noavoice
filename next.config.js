@@ -1,14 +1,7 @@
-const withCSS = require("@zeit/next-css")
 const withOffline = require("next-offline")
 const compose = require("next-compose")
 
 module.exports = compose([
-    [
-        withCSS,
-        {
-            target: "serverless"
-        }
-    ],
     [
         withOffline,
         {
