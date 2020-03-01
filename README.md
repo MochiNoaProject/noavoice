@@ -25,3 +25,7 @@
 例
 
 > 声 ： 望月のあ（[@_noach](https://twitter.com/_noach))
+
+## 音声ファイル
+
+[here](https://github.com/hrdtbs/noavoice/tree/master/public/static/voices)
