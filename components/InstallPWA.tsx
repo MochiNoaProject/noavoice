@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react"
 
 let _installPrompt: any
-window.addEventListener("beforeinstallprompt", e => {
-    e.preventDefault()
-    _installPrompt = e
-})
+if (typeof window !== "undefined") {
+    window.addEventListener("beforeinstallprompt", e => {
+        e.preventDefault()
+        _installPrompt = e
+    })
+}
 
 export default function AppInstallButton() {
     const [prompt, setInstallPrompt] = useState<any>(_installPrompt)
