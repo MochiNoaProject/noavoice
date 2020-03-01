@@ -128,7 +128,7 @@ function IndexPage() {
             <nav>
                 <div>
                     <small>
-                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v2.0.0</a>
+                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md">noavoice: v2.0.1</a>
                         <br />
                         <a href="https://twitter.com/_noach">声：望月のあ @_noach</a>
                         <br />
