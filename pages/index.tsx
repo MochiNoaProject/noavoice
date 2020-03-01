@@ -106,12 +106,13 @@ function IndexPage() {
                 }
                 a {
                     color: #ff7500;
-                    text-decoration: underline;
+                    text-decoration: none;
                     transition: 0.3s;
                 }
 
                 a:hover {
                     color: #faa65f;
+                    text-decoration: underline;
                 }
                 a button {
                     all: unset;
