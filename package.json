@@ -6,14 +6,11 @@
     "author": "hrdtbs <harada.tsubasa.0422@gmail.com>",
     "license": "MIT",
     "devDependencies": {
+        "@types/node": "^13.7.7",
         "@types/react": "^16.9.19",
         "@types/react-dom": "^16.9.5",
         "@typescript-eslint/eslint-plugin": "^2.19.0",
         "@typescript-eslint/parser": "^2.19.0",
-        "next": "canary",
-        "next-compose": "^0.0.2",
-        "next-offline": "^5.0.0",
-        "now": "^17.0.4",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.0",
         "eslint-plugin-prettier": "^3.1.2",
@@ -22,6 +19,10 @@
         "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
         "husky": "^4.2.1",
         "lint-staged": "^10.0.8",
+        "next": "canary",
+        "next-compose": "^0.0.2",
+        "next-offline": "^5.0.0",
+        "now": "^17.0.4",
         "prettier": "^1.19.1",
         "stylelint": "^13.0.0",
         "stylelint-config-recess-order": "^2.0.3",
@@ -36,9 +37,9 @@
         "typescript": "3.8.3"
     },
     "dependencies": {
+        "clsx": "^1.1.0",
         "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "clsx": "^1.1.0"
+        "react-dom": "^16.12.0"
     },
     "scripts": {
         "dev": "next",
