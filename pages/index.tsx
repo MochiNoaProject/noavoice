@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react"
+import { version } from "../package.json"
 import { voices } from "../constants/voices"
 import InstallPWA from "../components/InstallPWA"
 import clsx from "clsx"
@@ -134,8 +135,8 @@ function IndexPage() {
             <nav>
                 <div>
                     <small>
-                        <a href="https://github.com/hrdtbs/noavoice/blob/master/CHANGELOG.md#changelog">
-                            noavoice: v2.0.1
+                        <a href={`https://github.com/hrdtbs/noavoice/blob/v${version}/CHANGELOG.md#changelog`}>
+                            noavoice: v{version}
                         </a>
                         <br />
                         <a href="https://twitter.com/_noach">声：望月のあ @_noach</a>
@@ -143,7 +144,7 @@ function IndexPage() {
                         <a
                             rel="noreferrer noopener"
                             target="_blank"
-                            href="https://github.com/hrdtbs/noavoice#%E9%9F%B3%E5%A3%B0%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AElicence%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
+                            href={`https://github.com/hrdtbs/noavoice/blob/v${version}/README.md#%E9%9F%B3%E5%A3%B0%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AElicence%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6`}
                         >
                             音声ファイルのライセンスについて
                         </a>
