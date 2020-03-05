@@ -1,4 +1,3 @@
-import { useCallback, useState } from "react"
 import { version } from "../package.json"
 import { voices } from "../constants/voices"
 import InstallPWA from "../components/InstallPWA"

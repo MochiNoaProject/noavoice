@@ -5,12 +5,13 @@ const Voice: React.FC<{ name: string }> = ({ name }) => {
     const audioRef = useRef<HTMLAudioElement>(null)
     const [duration, setDuration] = useState(0)
     const [active, setActive] = useState(false)
-    const handleClick = useCallback(async () => {
+    const handleClick = useCallback(() => {
         const el = audioRef.current
 
         if (el) {
             setDuration(el.duration)
-            await el.play()
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            el.play()
         }
     }, [audioRef])
 
