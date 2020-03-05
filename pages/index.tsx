@@ -1,4 +1,3 @@
-import { useCallback, useState } from "react"
 import { version } from "../package.json"
 import { voices } from "../constants/voices"
 import InstallPWA from "../components/InstallPWA"
@@ -7,6 +6,12 @@ import Voice from "../components/Voice"
 function IndexPage() {
     return (
         <main>
+            <iframe
+                src="https://raw.githubusercontent.com/anars/blank-audio/master/500-milliseconds-of-silence.mp3"
+                allow="autoplay"
+                id="audio"
+                style={{ display: "none" }}
+            ></iframe>
             <style jsx>{`
                 main {
                     max-width: 900px;
