@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/hrdtbs/noavoice/compare/v2.0.1...v2.1.0) (2020-03-05)
+
+
+### Features
+
+* add InstallPWA button ([#3](https://github.com/hrdtbs/noavoice/issues/3)) ([0360fec](https://github.com/hrdtbs/noavoice/commit/0360feca3021f05484a7e0d28f430ecee40a5b84))
+
+
+### Bug Fixes
+
+* **config:** disable audio cache ([aff71b7](https://github.com/hrdtbs/noavoice/commit/aff71b76c98f6d4e6ebdc0290920f16a21c7e6f3))
+* **voice:** reduce processing weight ([ce6ec07](https://github.com/hrdtbs/noavoice/commit/ce6ec0715cc237aef15e441fcdaafd53e98e2d03))
+* modify license link for mobile UI ([feb6e5a](https://github.com/hrdtbs/noavoice/commit/feb6e5a18bc3e6a205c7b3141c0c8bd7c1b713cb))
+* move meta elements from _document to _app ([9daaa49](https://github.com/hrdtbs/noavoice/commit/9daaa49a9788492446b6637b24c0f685120b2eb6))
+* remove unnecessary description ([ecd4702](https://github.com/hrdtbs/noavoice/commit/ecd4702f2df2beba881b8ac6bdca7758c1b7f3d5))
+* upgrade to zero config for zeit now ([badf653](https://github.com/hrdtbs/noavoice/commit/badf6533126794ce0354a77a5a58bfa6b93efa0b))
+
 ### [2.0.1](https://github.com/hrdtbs/noavoice/compare/v2.0.0...v2.0.1) (2020-03-01)
 
 
