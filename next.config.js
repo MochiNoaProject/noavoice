@@ -28,7 +28,6 @@ const nextConfig = {
                 handler: "CacheFirst",
                 options: {
                     cacheName: "resorces",
-                    networkTimeoutSeconds: 15,
                     expiration: {
                         maxEntries: 150,
                         maxAgeSeconds: 30 * 24 * 60 * 60 // 1 month
