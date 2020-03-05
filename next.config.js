@@ -25,7 +25,18 @@ const nextConfig = {
             },
             {
                 urlPattern: /.(?:png|webp|svg|mp3)$/,
-                handler: "CacheFirst"
+                handler: "CacheFirst",
+                options: {
+                    cacheName: "resorces",
+                    networkTimeoutSeconds: 15,
+                    expiration: {
+                        maxEntries: 150,
+                        maxAgeSeconds: 30 * 24 * 60 * 60 // 1 month
+                    },
+                    cacheableResponse: {
+                        statuses: [0, 200]
+                    }
+                }
             }
         ]
     },
