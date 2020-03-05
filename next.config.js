@@ -24,7 +24,7 @@ const nextConfig = {
                 }
             },
             {
-                urlPattern: /.(?:png|webp|svg|mp4)$/,
+                urlPattern: /.(?:png|webp|svg|mp3)$/,
                 handler: "CacheFirst"
             }
         ]

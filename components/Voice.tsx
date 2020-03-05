@@ -63,7 +63,7 @@ const Voice: React.FC<{ name: string }> = ({ name }) => {
             <audio
                 preload="metadata"
                 ref={audioRef}
-                src={`/static/voices/${name}.mp4`}
+                src={`/static/voices/${name}.mp3`}
                 onPlay={() => setActive(true)}
                 onEnded={() => setActive(false)}
             ></audio>
