@@ -66,6 +66,7 @@ const Voice: React.FC<{ name: string }> = ({ name }) => {
                 src={`/static/voices/${name}.mp3`}
                 onPlay={() => setActive(true)}
                 onEnded={() => setActive(false)}
+                controls
             ></audio>
         </figure>
     )
