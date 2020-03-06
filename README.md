@@ -1,21 +1,5 @@
 # noavoice
 
-![Performance:100](https://img.shields.io/badge/Performance-100-09CE6A.svg?longCache=true)
-![Accessibility:95](https://img.shields.io/badge/Accessibility-95-09CE6A.svg?longCache=true)
-![BestPractices:100](https://img.shields.io/badge/BestPractices-100-09CE6A.svg?longCache=true)
-![SEO:100](https://img.shields.io/badge/SEO-100-09CE6A.svg?longCache=true)
-![PWA:Supported](https://img.shields.io/badge/PWA-Supported-4696FB.svg?longCache=true)
-
-## 不具合報告
-
-- アプリケーションに不具合があった場合
-- LICENCEについて質問がある場合
-
-は下記リンクからIssueを立ててください。
-
-https://github.com/hrdtbs/noavoice/issues/new
-
-
 ## 音声ファイルのLICENCEについて
 
 以下の条件1〜3を満たしていれば、二次創作物の再配布を認めます。一次創作物の再配布は認めません。
