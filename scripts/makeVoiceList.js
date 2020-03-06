@@ -1,7 +1,7 @@
+const { VOICE_DIR } = require("./constants")
+
 const fs = require("fs")
 const path = require("path")
-
-const VOICE_DIR = path.resolve(__dirname, "../static/voices/")
 
 fs.readdir(VOICE_DIR, (err, files) => {
     if (err) throw err
