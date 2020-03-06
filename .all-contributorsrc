@@ -1,0 +1,27 @@
+{
+  "projectName": "noavoice",
+  "projectOwner": "hrdtbs",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "hrdtbs",
+      "name": "hrdtbs",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/30747709?v=4",
+      "profile": "https://twitter.com/meowsmemo",
+      "contributions": [
+        "code",
+        "doc",
+        "design",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
