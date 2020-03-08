@@ -6,11 +6,11 @@ import Voice from "./Voice"
 type Props = {}
 
 const VoiceButtons: React.FC<Props> = props => {
-    const plaingVoiceRef = useRef<HTMLAudioElement | null>(null)
+    const playingVoiceRef = useRef<HTMLAudioElement | null>(null)
     return (
         <>
             {voices.map(voice => (
-                <Voice name={voice} key={`voice-${voice}`} playingAudioRef={plaingVoiceRef} />
+                <Voice name={voice} key={`voice-${voice}`} playingAudioRef={playingVoiceRef} />
             ))}
         </>
     )
