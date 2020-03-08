@@ -1,15 +1,24 @@
-import { useCallback, useRef, useState } from "react"
+import { MutableRefObject, useCallback, useRef, useState } from "react"
 import clsx from "clsx"
 
-const Voice: React.FC<{ name: string }> = ({ name }) => {
+const Voice: React.FC<{ name: string; playingAudioRef: MutableRefObject<HTMLAudioElement | null> }> = ({
+    name,
+    playingAudioRef
+}) => {
     const audioRef = useRef<HTMLAudioElement>(null)
     const [active, setActive] = useState(false)
+
     const handleClick = useCallback(async () => {
         const el = audioRef.current
+        if (playingAudioRef.current) {
+            playingAudioRef.current.pause()
+            playingAudioRef.current.currentTime = 0
+        }
         if (el) {
+            playingAudioRef.current = el
             await el.play()
         }
-    }, [audioRef])
+    }, [audioRef, playingAudioRef])
 
     return (
         <figure onClick={handleClick} className={clsx({ active })}>
@@ -44,6 +53,7 @@ const Voice: React.FC<{ name: string }> = ({ name }) => {
                 ref={audioRef}
                 onPlay={() => setActive(true)}
                 onEnded={() => setActive(false)}
+                onPause={() => setActive(false)}
             ></audio>
         </figure>
     )
