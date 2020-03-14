@@ -1,7 +1,6 @@
 import { version } from "../package.json"
-import { voices } from "../constants/voices"
 import InstallPWA from "../components/InstallPWA"
-import Voice from "../components/Voice"
+import VoiceButtons from "../components/VoiceButtons"
 
 function IndexPage() {
     return (
@@ -93,9 +92,7 @@ function IndexPage() {
                 </a>
             </nav>
             <article>
-                {voices.map(voice => (
-                    <Voice name={voice} key={`voice-${voice}`} />
-                ))}
+                <VoiceButtons />
             </article>
             <footer>
                 <InstallPWA />

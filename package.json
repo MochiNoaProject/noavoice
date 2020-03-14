@@ -6,6 +6,8 @@
     "author": "hrdtbs <harada.tsubasa.0422@gmail.com>",
     "license": "MIT",
     "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
         "@types/node": "^13.7.7",
         "@types/react": "^16.9.19",
         "@types/react-dom": "^16.9.5",
