@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/hrdtbs/noavoice/compare/v2.1.0...v2.2.0) (2020-03-14)
+
+
+### Features
+
+* manage the current playing voice ([bc330ff](https://github.com/hrdtbs/noavoice/commit/bc330ff20c61b6d53e05c9f8ad7aa292ff049c23))
+* Stop playing voice if exist playing voice ([846f0af](https://github.com/hrdtbs/noavoice/commit/846f0afebcaf29042df4513d15c261bf7ea7f6ae))
+
 ## [2.1.0](https://github.com/hrdtbs/noavoice/compare/v2.0.1...v2.1.0) (2020-03-05)
 
 
