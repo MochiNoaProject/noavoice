@@ -47,6 +47,7 @@
     "scripts": {
         "dev": "next",
         "build": "next build",
+        "voice": "node ./scripts/makeVoiceList.js",
         "start": "next start",
         "lint:ts": "eslint --cache",
         "lint:js": "eslint ./*.js --cache --ignore-pattern .eslintrc.js",
