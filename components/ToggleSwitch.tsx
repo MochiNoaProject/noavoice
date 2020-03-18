@@ -43,7 +43,7 @@ const ToggleSwitch: React.FC<Props> = ({ onClick, active }) => (
             }
         `}</style>
         <div className="button" style={active ? { flexDirection: "row-reverse" } : undefined} onClick={onClick}>
-            <div className="circle">
+            <div className="circle" style={{ backgroundColor: active ? "#f06808" : "#faa65f" }}>
                 <span className="state">{active ? "ON" : "OFF"}</span>
             </div>
             <div className="text">わーわーもーど</div>
