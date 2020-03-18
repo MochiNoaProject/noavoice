@@ -6,14 +6,8 @@ type Props = {
 }
 
 const ToggleSwitch: React.FC<Props> = ({ onClick, active }) => (
-    <div className="wrapper">
+    <>
         <style jsx>{`
-            .wrapper {
-                height: 81px;
-                display: flex;
-                flex-direction: column;
-                margin: auto 0;
-            }
             .button {
                 width: 260px;
                 height: 60px;
@@ -21,7 +15,7 @@ const ToggleSwitch: React.FC<Props> = ({ onClick, active }) => (
                 border-radius: 40px;
                 cursor: pointer;
                 display: flex;
-                margin: auto;
+                margin: 10px auto;
                 position: relative;
                 user-select: none;
                 transition: flex-direction 10s;
@@ -54,7 +48,7 @@ const ToggleSwitch: React.FC<Props> = ({ onClick, active }) => (
             </div>
             <div className="text">わーわーもーど</div>
         </div>
-    </div>
+    </>
 )
 
 export default ToggleSwitch
