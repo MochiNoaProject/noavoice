@@ -9,7 +9,6 @@ const ToggleSwitch: React.FC<Props> = ({ onClick, active }) => (
     <>
         <style jsx>{`
             .button {
-                width: 260px;
                 height: 60px;
                 background-color: #fcdfa1;
                 border-radius: 40px;
@@ -36,10 +35,7 @@ const ToggleSwitch: React.FC<Props> = ({ onClick, active }) => (
             .text {
                 color: #ff7500;
                 margin: auto;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateY(-50%) translateX(-50%);
+                padding: 0px 1em;
             }
         `}</style>
         <div className="button" style={active ? { flexDirection: "row-reverse" } : undefined} onClick={onClick}>
