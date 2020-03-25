@@ -3,14 +3,21 @@ import { memo, useRef } from "react"
 import { voices } from "../constants/voices"
 import Voice from "./Voice"
 
-type Props = {}
+type Props = {
+    isWowWowMode: boolean
+}
 
-const VoiceButtons: React.FC<Props> = props => {
+const VoiceButtons: React.FC<Props> = ({ isWowWowMode }) => {
     const playingVoiceRef = useRef<HTMLAudioElement | null>(null)
     return (
         <>
             {voices.map(voice => (
-                <Voice name={voice} key={`voice-${voice}`} playingAudioRef={playingVoiceRef} />
+                <Voice
+                    name={voice}
+                    key={`voice-${voice}`}
+                    playingAudioRef={playingVoiceRef}
+                    isWowWowMode={isWowWowMode}
+                />
             ))}
         </>
     )

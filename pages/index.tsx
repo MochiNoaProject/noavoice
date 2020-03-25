@@ -1,8 +1,16 @@
+import { useCallback, useState } from "react"
 import { version } from "../package.json"
 import InstallPWA from "../components/InstallPWA"
+import ToggleSwitch from "../components/ToggleSwitch"
 import VoiceButtons from "../components/VoiceButtons"
 
 function IndexPage() {
+    const [isWowWowMode, setIsWowWowMode] = useState(false)
+
+    const handleClick = useCallback(() => {
+        setIsWowWowMode(!isWowWowMode)
+    }, [isWowWowMode])
+
     return (
         <main>
             <style jsx>{`
@@ -78,6 +86,7 @@ function IndexPage() {
                         </a>
                     </small>
                 </div>
+                <ToggleSwitch onClick={handleClick} active={isWowWowMode} />
                 <a
                     href={encodeURI(
                         `https://twitter.com/intent/tweet?url=https://noavoice.now.sh&text=Vtuber望月のあボイスボタン&hashtags=のあぼいす`
@@ -92,7 +101,7 @@ function IndexPage() {
                 </a>
             </nav>
             <article>
-                <VoiceButtons />
+                <VoiceButtons isWowWowMode={isWowWowMode} />
             </article>
             <footer>
                 <InstallPWA />
