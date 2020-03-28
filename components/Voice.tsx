@@ -1,5 +1,4 @@
 import { MutableRefObject, useCallback, useRef, useState } from "react"
-import clsx from "clsx"
 
 type Props = {
     name: string
@@ -13,18 +12,27 @@ const Voice: React.FC<Props> = ({ name, playingAudioRef, isWowWowMode }) => {
 
     const handleClick = useCallback(async () => {
         const el = audioRef.current
-        if (playingAudioRef.current && !isWowWowMode) {
-            playingAudioRef.current.pause()
-            playingAudioRef.current.currentTime = 0
+        if (playingAudioRef.current) {
+            if (!isWowWowMode) {
+                playingAudioRef.current.pause()
+            }
         }
         if (el) {
-            playingAudioRef.current = el
+            el.currentTime = 0
             await el.play()
+            playingAudioRef.current = el
         }
     }, [audioRef, isWowWowMode, playingAudioRef])
 
+    const handleActivate = useCallback(() => {
+        setActive(true)
+    }, [])
+    const handleDeactivate = useCallback(() => {
+        setActive(false)
+    }, [])
+
     return (
-        <figure onClick={handleClick} className={clsx({ active })}>
+        <figure onClick={handleClick}>
             <style jsx>{`
                 figure {
                     user-select: none;
@@ -37,7 +45,7 @@ const Voice: React.FC<Props> = ({ name, playingAudioRef, isWowWowMode }) => {
                     overflow: hidden;
                     color: white;
                     cursor: pointer;
-                    background-color: #faa65f;
+                    background-color: ${active ? "#f06808" : "#faa65f"};
                     border-left: 12px solid #fcdfa1;
                     transition: 0.3s ease-in-out;
                     border-radius: 10px;
@@ -45,18 +53,13 @@ const Voice: React.FC<Props> = ({ name, playingAudioRef, isWowWowMode }) => {
                         0 1px 5px 0 rgba(0, 0, 0, 0.12);
                 }
             `}</style>
-            <style jsx>{`
-                figure.active {
-                    background-color: #f06808;
-                }
-            `}</style>
             <figcaption>{name}</figcaption>
             <audio
                 src={`/static/voices/${name}.mp3`}
                 ref={audioRef}
-                onPlay={() => setActive(true)}
-                onEnded={() => setActive(false)}
-                onPause={() => setActive(false)}
+                onPlay={handleActivate}
+                onEnded={handleDeactivate}
+                onPause={handleDeactivate}
             ></audio>
         </figure>
     )
