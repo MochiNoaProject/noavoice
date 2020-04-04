@@ -63,8 +63,8 @@ function IndexPage() {
             `}</style>
             <header>
                 <picture>
-                    <source srcSet="/static/header-min.webp" type="image/webp" />
-                    <img src="/static/header-min.png" alt="header" height="150px" width="100%" loading="lazy" />
+                    <source srcSet="/static/header.webp" type="image/webp" />
+                    <img src="/static/header.png" alt="header" height="150px" width="100%" loading="lazy" />
                 </picture>
             </header>
 
