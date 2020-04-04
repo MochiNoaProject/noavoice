@@ -58,4 +58,4 @@ const nextConfig = {
     }
 }
 
-module.exports = withOffline(nextConfig)
+module.exports = process.env.NODE_ENV === "development" ? nextConfig : withOffline(nextConfig)
