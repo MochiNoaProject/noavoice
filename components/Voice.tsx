@@ -1,12 +1,13 @@
 import { MutableRefObject, useCallback, useRef, useState } from "react"
+import { useWowWowMode } from "./WowWowModeProbider"
 
 type Props = {
     name: string
-    isWowWowMode: boolean
     playingAudioRef: MutableRefObject<HTMLAudioElement | null>
 }
 
-const Voice: React.FC<Props> = ({ name, playingAudioRef, isWowWowMode }) => {
+const Voice: React.FC<Props> = ({ name, playingAudioRef }) => {
+    const { isWowWowMode } = useWowWowMode()
     const audioRef = useRef<HTMLAudioElement>(null)
     const [active, setActive] = useState(false)
 
@@ -48,7 +49,7 @@ const Voice: React.FC<Props> = ({ name, playingAudioRef, isWowWowMode }) => {
                     background-color: ${active ? "#f06808" : "#faa65f"};
                     border-left: 12px solid #fcdfa1;
                     transition: 0.3s ease-in-out;
-                    border-radius: 10px;
+                    border-radius: 1ex;
                     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
                         0 1px 5px 0 rgba(0, 0, 0, 0.12);
                 }
